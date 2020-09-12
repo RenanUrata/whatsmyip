@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What's My IP</title>
     <link rel="stylesheet" href="style/style.css">
-    <script defer src="./src/gmaps.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css">
+
     <script defer src="./src/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
+
+ 
 </head>
 
 <body>
@@ -20,10 +24,28 @@
             </div>
             <spam class="location"></spam>
 
+            <div id="map" class="map"></div>
+            <script type="text/javascript">
+              var map = new ol.Map({
+                target: 'map',
+                layers: [
+                  new ol.layer.Tile({
+                    source: new ol.source.OSM()
+                  })
+                ],
+                view: new ol.View({
+                  center: ol.proj.fromLonLat([-46.3183,-22.8547]),
+                  zoom: 12
+                })
+              });
+            //   const fix = document.querySelector('.ol-unselectable')
+            //   fix.setAttribute('style', 'z-index: 1')
+            </script>
 
-            <div id="map"></div>
+
         </div>
     </div>
+ 
 </body>
 
 </html>
