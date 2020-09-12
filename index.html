@@ -27,6 +27,7 @@
             <div id="map" class="map"></div>
             <script defer type="text/javascript">
               let loc = JSON.parse(localStorage.getItem('location'))
+              console.table([loc.lng, loc.lat])
               var map = new ol.Map({
                 target: 'map',
                 layers: [
