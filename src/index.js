@@ -1,4 +1,4 @@
-// import GMaps from './gmaps';
+//  import ol from './ol';
 const init = () => {
   const copySvg = document.querySelector(".copySvg");
   const mapDiv = document.querySelector("#map");
