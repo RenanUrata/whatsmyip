@@ -27,7 +27,7 @@ const init = () => {
     .then((data) => {
       let { ip, org, city, region, country, loc, postal } = data;
       const lat = parseFloat(loc.substring(0, 6))
-      const lng = parseFloat(loc.substring(7, loc.length))
+      const lng = parseFloat(loc.substring(8, loc.length))
       location = { lat, lng}
       localStorage.setItem('location', JSON.stringify(location))
       const ipUI = document.querySelector(".ip");
