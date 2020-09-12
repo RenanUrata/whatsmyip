@@ -21,7 +21,6 @@ const init = () => {
     false
   );
 
-
   fetch("https://ipinfo.io/json")
     .then((response) => response.json())
     .then((data) => {
@@ -29,16 +28,25 @@ const init = () => {
       loc = loc.split(',')
       const lat = parseFloat(loc[0])
       const lng = parseFloat(loc[1])
-      location = { lat, lng}
-      localStorage.setItem('location', JSON.stringify(location))
       const ipUI = document.querySelector(".ip");
       ipUI.value = ip;
       const locationUI = document.querySelector(".location");
       locationUI.innerHTML = `${city}, ${region}, ${country}`;
+      
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([lng, lat]),
+          zoom: 12
+        })
+      });    
     })
     .catch((err) => console.error(err));
-
-
 };
 
 init();

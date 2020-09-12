@@ -7,11 +7,8 @@
     <title>What's My IP</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/css/ol.css" type="text/css">
-
-    <script defer src="./src/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.4.3/build/ol.js"></script>
-
- 
+    <script src="./src/ol.js"></script>
+    <script defer src="./src/index.js"></script> 
 </head>
 
 <body>
@@ -26,20 +23,7 @@
 
             <div id="map" class="map"></div>
             <script defer type="text/javascript">
-              let loc = JSON.parse(localStorage.getItem('location'))
-              console.table([loc.lng, loc.lat])
-              var map = new ol.Map({
-                target: 'map',
-                layers: [
-                  new ol.layer.Tile({
-                    source: new ol.source.OSM()
-                  })
-                ],
-                view: new ol.View({
-                  center: ol.proj.fromLonLat([loc.lng,loc.lat]),
-                  zoom: 12
-                })
-              });
+
 
             </script>
 
