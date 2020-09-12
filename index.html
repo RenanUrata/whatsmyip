@@ -25,7 +25,7 @@
             <spam class="location"></spam>
 
             <div id="map" class="map"></div>
-            <script type="text/javascript">
+            <script defer type="text/javascript">
               let loc = JSON.parse(localStorage.getItem('location'))
               var map = new ol.Map({
                 target: 'map',
@@ -39,8 +39,7 @@
                   zoom: 12
                 })
               });
-            //   const fix = document.querySelector('.ol-unselectable')
-            //   fix.setAttribute('style', 'z-index: 1')
+
             </script>
 
 
