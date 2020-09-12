@@ -26,6 +26,7 @@
 
             <div id="map" class="map"></div>
             <script type="text/javascript">
+              let loc = JSON.parse(localStorage.getItem('location'))
               var map = new ol.Map({
                 target: 'map',
                 layers: [
@@ -34,7 +35,7 @@
                   })
                 ],
                 view: new ol.View({
-                  center: ol.proj.fromLonLat([-46.3183,-22.8547]),
+                  center: ol.proj.fromLonLat([loc.lng,loc.lat]),
                   zoom: 12
                 })
               });

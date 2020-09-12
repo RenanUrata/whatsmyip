@@ -28,8 +28,8 @@ const init = () => {
       let { ip, org, city, region, country, loc, postal } = data;
       const lat = parseFloat(loc.substring(0, 8))
       const lng = parseFloat(loc.substring(9, loc.length))
-      // location = { lat, lng}
-      // localStorage.setItem('location', JSON.stringify(location))
+      location = { lat, lng}
+      localStorage.setItem('location', JSON.stringify(location))
       const ipUI = document.querySelector(".ip");
       ipUI.value = ip;
       const locationUI = document.querySelector(".location");
