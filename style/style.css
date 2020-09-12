@@ -7,7 +7,17 @@
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   background: #d8e5ec;
   color: #006faa;
- 
+
+}
+
+body{
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                supported by Chrome, Opera and Firefox */
 }
 
 .container {
@@ -47,6 +57,12 @@
   font-weight: 400;
   border: none;
   width: 60%;
+}
+
+.ip:focus {
+  outline: none;
+  color: transparent;
+  text-shadow: 0 0 0 #2196f3;
 }
 
 .location,
