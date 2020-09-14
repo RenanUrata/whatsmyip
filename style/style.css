@@ -57,6 +57,7 @@ body{
   font-weight: 400;
   border: none;
   width: 60%;
+  text-align: center;
 }
 
 .ip:focus {
